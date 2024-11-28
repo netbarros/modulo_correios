@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_correios_dashboard_tree" model="ir.ui.view">
+        <field name="name">correios.dashboard.tree</field>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="correios_tracking_number"/>
+                <field name="correios_last_status"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

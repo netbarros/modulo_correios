@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_correios_root" name="Correios" sequence="10" />
+    <menuitem id="menu_correios_config" name="Configurações"
+              parent="menu_correios_root" action="action_correios_config" />
+    <menuitem id="menu_correios_services" name="Serviços"
+              parent="menu_correios_root" action="action_correios_service" />
+    <menuitem id="menu_correios_dashboard" name="Painel de Rastreamento"
+              parent="menu_correios_root" action="action_correios_dashboard" />
+</odoo>
