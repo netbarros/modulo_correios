@@ -1,5 +1,5 @@
 {
-    'name': 'modulo_correios',
+    'name': 'Modulo Correios',
     'version': '1.0',
     'category': 'Delivery',
     'summary': 'Integração completa com os Correios: cálculo de frete, pré-postagem e rastreamento',
