@@ -1,7 +1,7 @@
 {
     'name': 'Modulo Correios',
     'version': '1.0',
-    'category': 'Delivery',
+    'category': 'Logistics',
     'summary': 'Integração completa com os Correios: cálculo de frete, pré-postagem e rastreamento',
     'description': """
 ### Funcionalidades:
@@ -18,6 +18,7 @@
     'price': 199.00,
     'currency': 'EUR',
     'depends': [
+        'base',
         'delivery',
         'sale_management',
         'stock',
