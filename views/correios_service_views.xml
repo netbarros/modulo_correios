@@ -1,29 +1,66 @@
 <odoo>
+    <!-- Lista de Serviços dos Correios -->
     <record id="view_correios_service_tree" model="ir.ui.view">
         <field name="name">correios.service.tree</field>
         <field name="model">correios.service</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-info="active">
                 <field name="name"/>
                 <field name="code"/>
                 <field name="description"/>
+                <field name="active"/>
             </tree>
         </field>
     </record>
 
+    <!-- Formulário de Serviços dos Correios -->
     <record id="view_correios_service_form" model="ir.ui.view">
         <field name="name">correios.service.form</field>
         <field name="model">correios.service</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Serviço dos Correios">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="description"/>
+                        <field name="name" placeholder="Ex: SEDEX"/>
+                        <field name="code" placeholder="Ex: 04014"/>
+                        <field name="description" placeholder="Descrição detalhada do serviço"/>
+                        <field name="active"/>
                     </group>
+                    <notebook>
+                        <page string="Métodos de Entrega Associados">
+                            <field name="delivery_carrier_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="delivery_type"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
+                <footer>
+                    <button string="Salvar" type="object" class="btn-primary" icon="fa-save"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
             </form>
         </field>
     </record>
+
+    <!-- Ação de Janela -->
+    <record id="action_correios_service" model="ir.actions.act_window">
+        <field name="name">Serviços dos Correios</field>
+        <field name="res_model">correios.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Aqui você pode gerenciar os serviços disponíveis dos Correios.
+                Certifique-se de que os códigos correspondem aos serviços válidos.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu de Serviços dos Correios -->
+    <menuitem id="menu_correios_services"
+              name="Serviços"
+              parent="menu_correios_root"
+              action="action_correios_service"/>
 </odoo>

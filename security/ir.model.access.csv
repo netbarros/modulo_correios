@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_correios_config,access.correios.config,model_correios_config,base.group_system,1,1,1,1
-access_correios_service,access.correios.service,model_correios_service,base.group_user,1,0,0,0
+access_correios_service,access.correios.service,model_correios_service,base.group_system,1,1,1,1
+access_stock_picking_correios,access.stock.picking.correios,model_stock_picking,base.group_user,1,0,0,0
+access_delivery_carrier_correios,access.delivery.carrier.correios,model_delivery_carrier,base.group_system,1,1,1,1

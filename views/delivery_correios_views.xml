@@ -1,13 +1,21 @@
 <odoo>
-    <record id="view_delivery_carrier_correios_form" model="ir.ui.view">
-        <field name="name">delivery.carrier.correios.form</field>
+    <record id="view_delivery_carrier_form_correios" model="ir.ui.view">
+        <field name="name">delivery.carrier.form.correios</field>
         <field name="model">delivery.carrier</field>
         <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook" position="inside">
-                <page string="Correios">
-                    <field name="correios_service_codes" widget="many2many_tags" options="{'no_create': True}"/>
-                </page>
+            <!-- Adiciona campo para seleção do serviço dos Correios -->
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="correios_service_code" string="Serviço dos Correios"/>
+            </xpath>
+            <!-- Grupo para informações específicas dos Correios -->
+            <xpath expr="//group[@name='options']" position="inside">
+                <group string="Configurações dos Correios">
+                    <field name="correios_user"/>
+                    <field name="correios_password" password="True"/>
+                    <field name="correios_contract_code"/>
+                    <field name="correios_sender_zip"/>
+                </group>
             </xpath>
         </field>
     </record>

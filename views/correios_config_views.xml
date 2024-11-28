@@ -1,18 +1,18 @@
 <odoo>
     <record id="view_correios_config_settings" model="ir.ui.view">
-        <field name="name">correios.config.settings</field>
+        <field name="name">correios.config.settings.form</field>
         <field name="model">res.config.settings</field>
         <field name="arch" type="xml">
             <form string="Configurações dos Correios">
                 <sheet>
                     <group string="Configuração da API">
-                        <field name="correios_user"/>
-                        <field name="correios_password" password="True"/>
-                        <field name="correios_contract_code"/>
-                        <field name="correios_sender_zip"/>
+                        <field name="correios_user" string="Usuário"/>
+                        <field name="correios_password" string="Senha" password="True"/>
+                        <field name="correios_contract_code" string="Código do Contrato"/>
+                        <field name="correios_sender_zip" string="CEP de Origem"/>
                     </group>
                     <group>
-                        <field name="correios_validated" readonly="1"/>
+                        <field name="correios_validated" readonly="1" string="Validado"/>
                         <button name="validate_correios_connection" type="object"
                                 string="Validar Conexão" class="btn-primary"/>
                     </group>

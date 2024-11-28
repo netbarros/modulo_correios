@@ -1,9 +1,28 @@
 <odoo>
+    <!-- Menu Raiz para Correios -->
     <menuitem id="menu_correios_root" name="Correios" sequence="10" />
+
+    <!-- Submenu: Configurações -->
     <menuitem id="menu_correios_config" name="Configurações"
               parent="menu_correios_root" action="action_correios_config" />
+
+    <!-- Submenu: Serviços -->
     <menuitem id="menu_correios_services" name="Serviços"
               parent="menu_correios_root" action="action_correios_service" />
+
+    <!-- Submenu: Painel de Rastreamento -->
     <menuitem id="menu_correios_dashboard" name="Painel de Rastreamento"
               parent="menu_correios_root" action="action_correios_dashboard" />
+
+    <!-- Submenu: Notificações dos Correios -->
+    <menuitem id="menu_correios_notifications" name="Notificações"
+              parent="menu_correios_root" action="action_correios_notification" />
+
+    <!-- Ação para Notificações -->
+    <record id="action_correios_notification" model="ir.actions.act_window">
+        <field name="name">Notificações dos Correios</field>
+        <field name="res_model">correios.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_correios_notification_tree"/>
+    </record>
 </odoo>

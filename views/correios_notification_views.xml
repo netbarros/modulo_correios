@@ -1,0 +1,32 @@
+<odoo>
+    <record id="view_correios_notification_tree" model="ir.ui.view">
+        <field name="name">correios.notification.tree</field>
+        <field name="model">correios.notification</field>
+        <field name="arch" type="xml">
+            <tree string="Notificações de Rastreamento">
+                <field name="sale_order_id"/>
+                <field name="tracking_code"/>
+                <field name="email_sent"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_correios_notification_form" model="ir.ui.view">
+        <field name="name">correios.notification.form</field>
+        <field name="model">correios.notification</field>
+        <field name="arch" type="xml">
+            <form string="Notificação de Rastreamento">
+                <sheet>
+                    <group>
+                        <field name="sale_order_id"/>
+                        <field name="tracking_code"/>
+                        <field name="email_sent"/>
+                    </group>
+                    <footer>
+                        <button name="send_notification_email" type="object" string="Enviar E-mail" class="btn-primary" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

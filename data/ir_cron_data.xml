@@ -1,6 +1,7 @@
 <odoo>
+    <!-- Cron job para atualizar o rastreamento dos Correios -->
     <record id="ir_cron_update_correios_status" model="ir.cron">
-        <field name="name">Atualizar Rastreamento Correios</field>
+        <field name="name">Atualização de Rastreamento dos Correios</field>
         <field name="model_id" ref="stock.model_stock_picking"/>
         <field name="state">code</field>
         <field name="code">model._update_correios_tracking_status()</field>
@@ -8,5 +9,8 @@
         <field name="interval_type">hours</field>
         <field name="numbercall">-1</field>
         <field name="active">True</field>
+        <field name="user_id" ref="base.user_root"/> <!-- Executa como administrador -->
+        <!-- Multiempresa -->
+        <field name="company_id" ref="base.main_company"/>
     </record>
 </odoo>
